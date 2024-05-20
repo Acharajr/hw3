@@ -1,0 +1,22 @@
+<h1>New Entry</h1>
+
+<form action="/entries" method="post">
+  <p>
+    <label for="title">Name of Place</label>
+    <input type="text" name="title">
+
+    <label for="description">Description</label>
+    <input type="text" name="description">
+  <p>
+
+ </p>
+    <label for="posted_on">Posted On</label>
+    <input type="text" name="posted_on">
+  </p>
+
+  <!-- transfer state from the previous action to the next -->
+  <p>
+    <input type="text" name="place_id" value="<%=@place["place_id"] %>">
+  </p>
+  <button>Submit</button>
+</form>

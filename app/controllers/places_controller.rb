@@ -16,9 +16,6 @@ class PlacesController < ApplicationController
     @place = Place.new
 
     @place["name"] = params["name"]
-    @place["city"] = params["city"]
-    @place["state"] = params["state"]
-    
     @place.save
     
     redirect_to "/places"
@@ -32,8 +29,6 @@ class PlacesController < ApplicationController
     @place = Place.find_by({ "id" => params["id"] })
   
     @place["name"] = params["name"]
-    @place["city"] = params["city"]
-    @place["state"] = params["state"]
   
     @place.save
   
