@@ -1,22 +1,20 @@
 <h1>New Entry</h1>
 
-<form action="/entries" method="post">
+<%= form_with url: "/entries", local: true do |form| %>
   <p>
-    <label for="title">Name of Place</label>
-    <input type="text" name="title">
-
-    <label for="description">Description</label>
-    <input type="text" name="description">
-  <p>
-
- </p>
-    <label for="posted_on">Posted On</label>
-    <input type="text" name="posted_on">
+    <%= form.label :title, "Name of Place" %>
+    <%= form.text_field :title %>
   </p>
 
-  <!-- transfer state from the previous action to the next -->
   <p>
-    <input type="text" name="place_id" value="<%=@place["place_id"] %>">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
   </p>
-  <button>Submit</button>
-</form>
+
+  <p>
+    <%= form.label :posted_on, "Posted On" %>
+    <%= form.date_field :posted_on, value: Date.today.strftime("%d/%m/%Y") %>
+  </p>
+
+  <%= form.submit "Submit" %>
+<% end %>

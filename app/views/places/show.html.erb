@@ -9,7 +9,9 @@
   <% for entry in @entries %>
     <li>
       <a href="/entries/<%= entry["id"] %>">
-        <%= entry["title"] %>, <%= entry["description"] %>, <%= entry["posted_on"] %>
+        <%= entry["title"] %>, 
+        <%= entry["description"] %>, 
+        <%= entry["posted_on"] %>
       </a>
     </li>
   <% end %>
@@ -19,4 +21,4 @@
   <a href="/entries/new?place_id=<%= @place["id"] %>">New Entry</a>
 </p>
 
-<p><a href="/companies">Back to Homescreen</a></p>
+<p><a href="/places">Back to Homescreen</a></p>
