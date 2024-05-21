@@ -9,7 +9,6 @@ class PlacesController < ApplicationController
   end
   
   def new
-    # render view with new place form
     @places = Place.new
   end
   
